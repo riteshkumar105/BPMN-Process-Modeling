@@ -1,0 +1,44 @@
+{
+  "components": [
+    {
+      "label": "Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_178zz9j",
+        "columns": null
+      },
+      "id": "Field_0f4mlia",
+      "key": "name"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Leave Date",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_02t78hj",
+        "columns": null
+      },
+      "id": "Field_0opnuon",
+      "key": "leaveDate"
+    },
+    {
+      "label": "Reason",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1a80vl6",
+        "columns": null
+      },
+      "id": "Field_1lftcsq",
+      "key": "reason"
+    }
+  ],
+  "type": "default",
+  "id": "Form_LeaveRequest",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.49.0"
+  },
+  "schemaVersion": 19
+}
