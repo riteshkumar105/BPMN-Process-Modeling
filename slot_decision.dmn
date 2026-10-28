@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_slot" name="Slot decision" namespace="http://camunda.org/schema/1.0/dmn" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <decision id="slot_decision" name="Slot decision">
+    <decisionTable id="DecisionTable_1" hitPolicy="UNIQUE">
+      <input id="Input_dept" label="department">
+        <inputExpression id="IE_dept" typeRef="string"><text>department</text></inputExpression>
+      </input>
+      <input id="Input_count" label="bookedCount">
+        <inputExpression id="IE_count" typeRef="number"><text>bookedCount</text></inputExpression>
+      </input>
+      <output id="Output_status" label="slotStatus" name="slotStatus" typeRef="string" />
+      <output id="Output_action" label="suggestedAction" name="suggestedAction" typeRef="string" />
+      <rule id="Rule_id_1">
+        <inputEntry id="id_2"><text>"Cardiology"</text></inputEntry>
+        <inputEntry id="id_3"><text>>= 10</text></inputEntry>
+        <outputEntry id="id_4"><text>"FULL"</text></outputEntry>
+        <outputEntry id="id_5"><text>"Offer next available date or another department"</text></outputEntry>
+      </rule>
+      <rule id="Rule_id_6">
+        <inputEntry id="id_7"><text>"Cardiology"</text></inputEntry>
+        <inputEntry id="id_8"><text>&lt; 10</text></inputEntry>
+        <outputEntry id="id_9"><text>"AVAILABLE"</text></outputEntry>
+        <outputEntry id="id_10"><text>"Confirm booking"</text></outputEntry>
+      </rule>
+      <rule id="Rule_id_11">
+        <inputEntry id="id_12"><text>"Neurology"</text></inputEntry>
+        <inputEntry id="id_13"><text>>= 8</text></inputEntry>
+        <outputEntry id="id_14"><text>"FULL"</text></outputEntry>
+        <outputEntry id="id_15"><text>"Offer next available date or another department"</text></outputEntry>
+      </rule>
+      <rule id="Rule_id_16">
+        <inputEntry id="id_17"><text>"Neurology"</text></inputEntry>
+        <inputEntry id="id_18"><text>&lt; 8</text></inputEntry>
+        <outputEntry id="id_19"><text>"AVAILABLE"</text></outputEntry>
+        <outputEntry id="id_20"><text>"Confirm booking"</text></outputEntry>
+      </rule>
+      <rule id="Rule_id_21">
+        <inputEntry id="id_22"><text>"General"</text></inputEntry>
+        <inputEntry id="id_23"><text>>= 15</text></inputEntry>
+        <outputEntry id="id_24"><text>"FULL"</text></outputEntry>
+        <outputEntry id="id_25"><text>"Offer next available date or another department"</text></outputEntry>
+      </rule>
+      <rule id="Rule_id_26">
+        <inputEntry id="id_27"><text>"General"</text></inputEntry>
+        <inputEntry id="id_28"><text>&lt; 15</text></inputEntry>
+        <outputEntry id="id_29"><text>"AVAILABLE"</text></outputEntry>
+        <outputEntry id="id_30"><text>"Confirm booking"</text></outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1">
+      <dmndi:DMNShape id="DMNShape_1" dmnElementRef="slot_decision">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
